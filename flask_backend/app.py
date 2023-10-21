@@ -92,7 +92,7 @@ def get_charity(tweet):
     result = search(highest_charity)
     return result
 
-@app.route("/api", methods=["GET"])
+@app.route("/api", methods=["POST"])
 def home():
     tweet = request.json.get('text', '')
     output = get_charity(tweet)
