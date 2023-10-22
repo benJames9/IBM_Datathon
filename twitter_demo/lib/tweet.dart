@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Tweet extends StatelessWidget {
   final String text;
-  String? charity;
+  InlineSpan? charity;
   String user;
   String userName;
 
@@ -31,14 +31,15 @@ class Tweet extends StatelessWidget {
 }
 
 class CharityWidget extends StatelessWidget {
-  final String message;
+  final InlineSpan message;
 
   const CharityWidget(this.message, {super.key});
 
   @override
   Widget build(BuildContext context) {
     return Tooltip(
-      message: message,
+      richMessage: message,
+      decoration: const BoxDecoration(color: Color.fromRGBO(0, 0, 0, 0.9)),
       child: const Icon(Icons.info),
     );
   }

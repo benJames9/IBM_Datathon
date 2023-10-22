@@ -16,7 +16,7 @@ CORS(app)
 
 encoding_model = SentenceTransformer('BAAI/bge-base-en-v1.5')
 bst = xgb.Booster()
-bst.load_model('XGB_Model2.bst')
+bst.load_model('XGB_Model4.bst')
 
 chartiy_label_data = pd.read_parquet('Charity_Embeddings.parquet')
 charities = chartiy_label_data['Charity'].values
@@ -55,9 +55,9 @@ def search(query, num_results=10):
             domain_names.append(split_url[2])
             final_list.append(url)
     
-    final_string = ''
+    final_string = 'Here are some links to charities surrounding this topic:\n'
     for strings in final_list[:3]:
-        final_string += strings + ' '
+        final_string += strings + '\n'
     return final_string
 
 
@@ -92,7 +92,7 @@ def get_charity(tweet):
     result = search(highest_charity)
     return result
 
-@app.route("/api", methods=["GET"])
+@app.route("/api", methods=["POST"])
 def home():
     tweet = request.json.get('text', '')
     output = get_charity(tweet)

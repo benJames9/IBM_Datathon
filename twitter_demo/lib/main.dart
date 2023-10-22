@@ -93,13 +93,13 @@ class _MyHomePageState extends State<MyHomePage> {
     return FutureBuilder(
         future: widget.charityFetcher.getCharity(text),
         builder: (context, snapshot) {
-          String charity = "None";
+          InlineSpan? charity;
 
           if (snapshot.hasData) {
             charity = snapshot.data!;
           }
 
-          if (charity == "None") {
+          if (charity == null) {
             return Tweet(text, user, userName);
           } else {
             return Tweet(text, user, userName, charity: charity);
@@ -109,20 +109,22 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void addDummyTweets() {
     widget.tweets.add(tweetFromText(
-        "I like throwing bricks at homeless people", "Alex Timms", "TDogAle"));
+        "I'm so gutted about the England vs South Africa game. Keep your heads up lads!",
+        "Alex Timms",
+        "TDogAle"));
     widget.tweets.add(tweetFromText(
-        "No one makes chocolate cake like my aunt with prostate issues (if you know what I mean ;)",
+        "What'll they think of next? “Forbes just found out about marijuana edibles”",
         "Matt Gummow",
-        "HomelessHater2000"));
+        "zOS_lover20"));
     widget.tweets.add(tweetFromText(
-        "Whats happening right now in Palestine is horrific",
+        "The entire conflict happening in Palestine and Israel right now is horrific.",
         "Sarah",
         "Salmond"));
     widget.tweets
         .add(tweetFromText("I like ping pong", "Alex Timms", "TDogAle"));
     widget.tweets.add(tweetFromText(
-        "Stephen Hawking has ISSUES. Cancel this mans",
+        "Trump Eases Combat Rules in Somalia Intended to Protect Civilians - The New York Times",
         "Matt Gummow",
-        "HomelessHater2000"));
+        "zOS_lover20"));
   }
 }
