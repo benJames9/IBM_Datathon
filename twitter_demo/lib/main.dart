@@ -93,13 +93,13 @@ class _MyHomePageState extends State<MyHomePage> {
     return FutureBuilder(
         future: widget.charityFetcher.getCharity(text),
         builder: (context, snapshot) {
-          String charity = "No Charity";
+          InlineSpan? charity;
 
           if (snapshot.hasData) {
             charity = snapshot.data!;
           }
 
-          if (charity == "No Charity") {
+          if (charity == null) {
             return Tweet(text, user, userName);
           } else {
             return Tweet(text, user, userName, charity: charity);

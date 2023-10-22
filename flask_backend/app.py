@@ -55,9 +55,9 @@ def search(query, num_results=10):
             domain_names.append(split_url[2])
             final_list.append(url)
     
-    final_string = ''
+    final_string = 'Here are some links to charities surrounding this topic:\n'
     for strings in final_list[:3]:
-        final_string += strings + ' '
+        final_string += strings + '\n'
     return final_string
 
 
