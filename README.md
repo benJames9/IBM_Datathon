@@ -3,8 +3,8 @@
 ## Twitter Charity Classifier
 ### In this repo there is a Flask Backend, a Flutter Frontend and a notebook explaining overall Model Creation
 
-## Flask Backend
-### To run use python app.py
+### Flask Backend
+#### To run use python app.py
 
-## Flutter Frontend
-### To run use flutter run
+### Flutter Frontend
+#### To run use flutter run
