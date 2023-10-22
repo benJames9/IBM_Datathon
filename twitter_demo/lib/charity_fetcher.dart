@@ -38,7 +38,7 @@ class CharityProvider {
           style: const TextStyle(color: Colors.blue),
         ),
         TextSpan(
-          text: urls[2],
+          text: urls[3],
           style: const TextStyle(color: Colors.blue),
         ),
       ]);
