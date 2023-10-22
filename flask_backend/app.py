@@ -16,7 +16,7 @@ CORS(app)
 
 encoding_model = SentenceTransformer('BAAI/bge-base-en-v1.5')
 bst = xgb.Booster()
-bst.load_model('XGB_Model3.bst')
+bst.load_model('XGB_Model4.bst')
 
 chartiy_label_data = pd.read_parquet('Charity_Embeddings.parquet')
 charities = chartiy_label_data['Charity'].values
